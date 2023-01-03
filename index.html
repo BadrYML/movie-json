@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="script.js"></script>
+    <style>
+        body {
+            background-color: #333;
+            color: white;
+            padding: 1em;
+        }
+
+        .movie {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid lightgray;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 1em;
+            padding: 1em;
+            width: 45%;
+        }
+
+        .movie-cover {
+            width: 100%;
+            height: auto;
+        }
+
+        .movie h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0.5em 0;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .movie h3 {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 0.5em 0;
+            text-align: center;
+        }
+
+        .movie p {
+            font-size: 1em;
+            margin: 0.5em 0;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+        }
+
+        .navbar a:hover {
+            color: lightgray;
+        }
+
+    /*Responsive Design*/
+
+      @media (max-width: 992px) {
+  .movie {
+      width: 60%;
+  }
+  .search-bar {
+      width: 60%;
+      margin-left: 20%;
+  }
+}
+
+@media (max-width: 768px) {
+  .movie {
+      width: 75%;
+  }
+  .search-bar {
+      width: 75%;
+      margin-left: 12.5%;
+  }
+}
+
+@media (max-width: 576px) {
+  .movie {
+      width: 75%;
+  }
+  .search-bar {
+      width: 75%;
+      margin-left: 12.5%;
+  }
+}
+    </style>
+  </head>
+
+<body onload="displayMovies()">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand">Movie List</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+    </div>
+    <!-- Add search input element -->
+    <form class="form-inline my-2 my-lg-0">
+      <input id="search-input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onkeyup="displayMovies()">
+    </form>
+  </nav>
+  <div class="container mt-5">
+    <div id="movie-list" class="row"></div>
+  </div>
+    </body>
+</html>
